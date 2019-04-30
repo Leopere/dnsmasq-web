@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+  dnsmasq:
+    image: leopere/dnsmasq
+    ports:
+      - '53:53/udp'
+      - '5380:8080'
+    volumes:
+      - '/opt/dnsmasq.conf:/etc/dnsmasq.conf'
+    environment:
+      HTTP_USER: REPLACEME
+      HTTP_PASS: REPLACEME
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "10"

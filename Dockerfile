@@ -4,6 +4,7 @@ LABEL maintainer="dev@jpillora.com"
 ENV WEBPROC_VERSION 0.2.2
 ENV WEBPROC_URL https://github.com/jpillora/webproc/releases/download/$WEBPROC_VERSION/webproc_linux_amd64.gz
 # fetch dnsmasq and webproc binary
+SHELL ["/bin/ash", "-o", "pipefail", "-c"]
 RUN apk update \
 	&& apk --no-cache add dnsmasq \
 	&& apk add --no-cache --virtual .build-deps curl \
