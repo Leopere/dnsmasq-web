@@ -1,4 +1,4 @@
-FROM alpine:stable
+FROM alpine:latest
 LABEL MAINTAINER="leopere [at] nixc [dot] us"
 # webproc release settings
 ENV WEBPROC_VERSION 0.2.2
